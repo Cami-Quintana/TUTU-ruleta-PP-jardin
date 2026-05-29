@@ -1,0 +1,217 @@
+[gd_scene load_steps=15 format=3 uid="uid://bnhsqmjfuok2i"]
+
+[ext_resource type="Script" path="res://RuletaScene.gd" id="1_c0wk3"]
+[ext_resource type="Texture2D" uid="uid://r8uwie2ot5ou" path="res://imagenes/Fons/inicio-Tucu-Preguntas.png" id="2_blc0j"]
+[ext_resource type="Texture2D" uid="uid://uv4lpagifwfe" path="res://imagenes/Decor/Ruleta.png" id="3_bpv1v"]
+[ext_resource type="Texture2D" uid="uid://ib76yf11t2pu" path="res://imagenes/Decor/manilla.png" id="4_kr4pm"]
+[ext_resource type="FontFile" uid="uid://x61g2j4yv0i2" path="res://fuente/tirulo/Glossy Sheen Regular DEMO.ttf" id="5_fubc8"]
+[ext_resource type="PackedScene" uid="uid://b5e6c72qvwlxd" path="res://Script/Pregun/pre_agua.tscn" id="6_8kbek"]
+[ext_resource type="PackedScene" uid="uid://co3x3dcwbgve4" path="res://Script/Pregun/pre_artico.tscn" id="7_j1sff"]
+[ext_resource type="PackedScene" uid="uid://wuupr8c3ci7x" path="res://Script/Pregun/pre_aves.tscn" id="8_2ikga"]
+[ext_resource type="PackedScene" uid="uid://di7qmivyjklg5" path="res://Script/Pregun/pre_bosque.tscn" id="9_dyc7e"]
+[ext_resource type="PackedScene" uid="uid://dohny0lqtohm5" path="res://Script/Pregun/pre_jungla.tscn" id="10_wbfk1"]
+[ext_resource type="AudioStream" uid="uid://ogyiu20yv53k" path="res://Sonidos Pregunta Correcta y Incorrecta/RULETA_TABLERO_FINAL_MP4.mp3" id="12_dpqa6"]
+[ext_resource type="PackedScene" uid="uid://viitj24gk84" path="res://Script/Pregun/pre_sabana.tscn" id="12_ybm1w"]
+[ext_resource type="FontFile" uid="uid://es7vymfhs5qo" path="res://fuente/texto/KOMIKAX_.ttf" id="13_lss6u"]
+[ext_resource type="PackedScene" uid="uid://cfi8b5a76ua0h" path="res://Script/Princ/principio.tscn" id="14_1xd11"]
+
+[node name="RuletaScene" type="Node2D"]
+script = ExtResource("1_c0wk3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = -3.0
+offset_right = 582.0
+offset_bottom = 942.0
+texture = ExtResource("2_blc0j")
+metadata/_edit_use_anchors_ = true
+
+[node name="SpriteRuleta" type="Sprite2D" parent="."]
+position = Vector2(284, 453)
+scale = Vector2(0.564, 0.564)
+texture = ExtResource("3_bpv1v")
+
+[node name="mar" type="Area2D" parent="SpriteRuleta"]
+position = Vector2(-2, 2)
+
+[node name="mar" type="CollisionPolygon2D" parent="SpriteRuleta/mar"]
+position = Vector2(-531.688, -289.234)
+polygon = PackedVector2Array(784, 288, 661.667, 68.3333, 535, 286.666, 536, 288)
+disabled = true
+
+[node name="savana" type="Area2D" parent="SpriteRuleta"]
+position = Vector2(-2, 2)
+
+[node name="savana" type="CollisionPolygon2D" parent="SpriteRuleta/savana"]
+position = Vector2(-526.369, -306.964)
+polygon = PackedVector2Array(778.369, 306.738, 659.472, 525.05, 531.666, 308.333, 531.666, 306.667)
+disabled = true
+
+[node name="bosque" type="Area2D" parent="SpriteRuleta"]
+position = Vector2(-2, 2)
+
+[node name="bosque" type="CollisionPolygon2D" parent="SpriteRuleta/bosque"]
+position = Vector2(-496.333, -340.333)
+polygon = PackedVector2Array(624, 560, 373.333, 561.667, 498.333, 343.333, 500, 343.333)
+disabled = true
+
+[node name="jungla" type="Area2D" parent="SpriteRuleta"]
+position = Vector2(-2, 2)
+
+[node name="jungla" type="CollisionPolygon2D" parent="SpriteRuleta/jungla"]
+position = Vector2(-463, -328.667)
+polygon = PackedVector2Array(337.405, 546.717, 197.405, 326.667, 463.333, 328.334, 463.333, 330)
+disabled = true
+
+[node name="artico" type="Area2D" parent="SpriteRuleta"]
+position = Vector2(-2, 2)
+
+[node name="artico" type="CollisionPolygon2D" parent="SpriteRuleta/artico"]
+position = Vector2(-446.333, -288.667)
+polygon = PackedVector2Array(180.738, 286.667, 310.105, 54.0935, 446.561, 286.667)
+disabled = true
+
+[node name="Cielo" type="Area2D" parent="SpriteRuleta"]
+position = Vector2(1.5, -3)
+
+[node name="Cielo" type="CollisionPolygon2D" parent="SpriteRuleta/Cielo"]
+position = Vector2(-15.6772, 36.9915)
+polygon = PackedVector2Array(-119.578, -269.363, 140.928, -260.417, 15.9493, -37.5696, 13.3333, -38.3334)
+disabled = true
+
+[node name="AreaManecilla" type="Area2D" parent="."]
+position = Vector2(345.75, 178.025)
+scale = Vector2(0.2, 0.2)
+
+[node name="SpriteManecilla" type="Sprite2D" parent="AreaManecilla"]
+position = Vector2(-328.75, 1044.88)
+scale = Vector2(0.970899, 0.937544)
+texture = ExtResource("4_kr4pm")
+offset = Vector2(0, 80)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaManecilla"]
+position = Vector2(831.25, 664.875)
+rotation = 0.00297097
+polygon = PackedVector2Array(-1164.65, 118.46, -1164.65, 118.46, -1190, 120, -1175, 100, -1164.65, 118.46, -1164.65, 118.46, -1164.65, 118.46)
+
+[node name="Principio" parent="." instance=ExtResource("14_1xd11")]
+
+[node name="Button" type="Button" parent="."]
+clip_contents = true
+offset_left = 209.0
+offset_top = 390.0
+offset_right = 356.0
+offset_bottom = 513.0
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.172549, 0.152941, 0.141176, 1)
+theme_override_colors/font_focus_color = Color(0.815686, 0.788235, 0.831373, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.34902, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_fubc8")
+theme_override_font_sizes/font_size = 44
+text = "GIRAR
+"
+flat = true
+
+[node name="agua" parent="." instance=ExtResource("6_8kbek")]
+visible = false
+
+[node name="artico" parent="." instance=ExtResource("7_j1sff")]
+visible = false
+
+[node name="Cielo" parent="." instance=ExtResource("8_2ikga")]
+visible = false
+
+[node name="bosque" parent="." instance=ExtResource("9_dyc7e")]
+visible = false
+
+[node name="jungla" parent="." instance=ExtResource("10_wbfk1")]
+visible = false
+
+[node name="sabana" parent="." instance=ExtResource("12_ybm1w")]
+visible = false
+
+[node name="AudioRuleta" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(326, 446)
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("12_dpqa6")
+
+[node name="tipo" type="Label" parent="."]
+offset_left = 165.0
+offset_top = 168.0
+offset_right = 420.0
+offset_bottom = 234.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.803922, 0.803922, 0.803922, 1)
+theme_override_fonts/font = ExtResource("5_fubc8")
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="comenzar" type="Button" parent="."]
+visible = false
+clip_contents = true
+offset_left = 172.0
+offset_top = 386.0
+offset_right = 393.0
+offset_bottom = 494.0
+theme_override_colors/font_color = Color(0.341176, 0.627451, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.403922, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_fubc8")
+theme_override_font_sizes/font_size = 50
+flat = true
+
+[node name="time_ruleta" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="corectas" type="Label" parent="."]
+offset_left = 34.0
+offset_top = -2.0
+offset_right = 290.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_lss6u")
+theme_override_font_sizes/font_size = 20
+text = "Preguntas Correctas : "
+vertical_alignment = 1
+
+[node name="puntomax" type="Label" parent="."]
+visible = false
+offset_left = 341.0
+offset_top = 24.0
+offset_right = 426.0
+offset_bottom = 78.0
+text = "0"
+
+[node name="puntos" type="Label" parent="."]
+offset_left = 299.0
+offset_top = 26.0
+offset_right = 380.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_lss6u")
+theme_override_font_sizes/font_size = 20
+vertical_alignment = 1
+
+[connection signal="area_entered" from="AreaManecilla" to="." method="_on_AreaManecilla_area_entered"]
+[connection signal="iniciar_juego" from="Principio" to="." method="iniciar_juego"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="comenzar" to="." method="_on_comenzar_pressed"]
+[connection signal="timeout" from="time_ruleta" to="." method="_on_ruleta_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
